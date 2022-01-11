@@ -1,6 +1,6 @@
 import { defineComponent, reactive } from 'vue'
 // import App from './App.vue'
-import Main from './components/Main.vue'
+import Main from './components/Main'
 import { ref } from 'vue'
 function renderMain(num: number) {
   return <Main age={num} />
@@ -18,7 +18,7 @@ export default defineComponent({
         <div id="app">
           <p>{age.value}</p>
           <input type="text" v-model={state.name} />
-          <Main age={14}></Main>
+          <Main age={22}></Main>
           {renderMain(12)}
         </div>
       )

@@ -1,23 +1,16 @@
-<template>
-  <div>{{ age }}</div>
-</template>
-
-<script lang="ts">
 import { defineComponent, PropType } from '@vue/runtime-core'
 const PropsType = {
   age: {
-    type: Number,
+    type: Number as PropType<number>,
     required: true
   },
   msg: String
 } as const
 export default defineComponent({
-  name: 'Main',
   props: PropsType,
-  mounted() {
-    this.age
+  setup(props) {
+    return () => {
+      return <div>{props.age}</div>
+    }
   }
 })
-</script>
-
-<style></style>

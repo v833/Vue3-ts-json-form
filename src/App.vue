@@ -5,13 +5,13 @@
 </template>
 
 <script lang="ts">
-import Main from './components/Main.vue'
+// import Main from './components/Main'
 import { defineComponent, ref, computed, watchEffect } from 'vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Main
+    // Main
   },
   setup(props, { slots, attrs, emit }) {
     const name = ref('Stvfen')
