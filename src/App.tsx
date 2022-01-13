@@ -176,14 +176,14 @@ export default defineComponent({
               </div>
             </div>
             <div class={classes.form}>
-              <SchemaForm />
-              {/* <SchemaForm
+              {/* <SchemaForm schema={demo.schema} /> */}
+              <SchemaForm
                 schema={demo.schema!}
-                uiSchema={demo.uiSchema!}
+                // uiSchema={demo.uiSchema!}
                 onChange={handleChange}
-                contextRef={methodRef}
+                // contextRef={methodRef}
                 value={demo.data}
-              /> */}
+              />
             </div>
           </div>
         </div>
