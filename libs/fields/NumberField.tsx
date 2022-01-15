@@ -6,7 +6,13 @@ export default defineComponent({
   props: FieldPropsDefine,
   setup(props, { slots, emit, attrs }) {
     const handleChange = (e: any) => {
-      props.onChange(e.target.value)
+      const value = e.target.value
+      const num = Number(value)
+      if (Number.isNaN(num) && num) {
+        props.onChange(undefined)
+      } else {
+        props.onChange(num)
+      }
     }
     return () => {
       const { value } = props
