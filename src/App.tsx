@@ -183,6 +183,7 @@ export default defineComponent({
                 onChange={handleChange}
                 // contextRef={methodRef}
                 value={demo.data}
+                rootSchema={demo.schema}
               />
             </div>
           </div>

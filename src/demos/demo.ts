@@ -1,8 +1,19 @@
 export default {
   name: 'Demo',
   schema: {
-    type: 'string'
+    type: 'object',
+    properties: {
+      name: {
+        type: 'string'
+      },
+      age: {
+        type: 'number'
+      }
+    }
   },
   uiSchema: {},
-  default: 'wq'
+  default: {
+    name: 'wq',
+    age: 18
+  }
 }
