@@ -82,25 +82,33 @@ export const SelectionWidgetPropsDefine = {
         key: string
         value: any
       }[]
-    >
+    >,
+    required: true
   }
-}
-type CommonWidgetDefine = DefineComponent<
+} as const
+
+export type CommonWidgetDefine = DefineComponent<
   typeof CommonWidgetPropsDefine,
   {},
   {}
 >
 
-type SelectionWidgetDefine = DefineComponent<
+export type SelectionWidgetDefine = DefineComponent<
   typeof SelectionWidgetPropsDefine,
   {},
   {}
 >
-
+export enum SelectionWidgetNames {
+  SelectionWidget = 'SelectionWidget'
+}
+export enum CommonWidgetNames {
+  TextWidget = 'TextWidget',
+  NumberWidget = 'NumberWidget'
+}
 export interface Theme {
   widgets: {
-    SelectionWidget: SelectionWidgetDefine
-    TextWidget: CommonWidgetDefine
-    NumberWidget: CommonWidgetDefine
+    [SelectionWidgetNames.SelectionWidget]: SelectionWidgetDefine
+    [CommonWidgetNames.TextWidget]: CommonWidgetDefine
+    [CommonWidgetNames.NumberWidget]: CommonWidgetDefine
   }
 }

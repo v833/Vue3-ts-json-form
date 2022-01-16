@@ -1,13 +1,6 @@
-import {
-  computed,
-  createSlots,
-  defineComponent,
-  inject,
-  PropType,
-  provide,
-  Ref
-} from 'vue'
-import { Theme } from './types'
+import { computed, defineComponent, inject, PropType, provide, Ref } from 'vue'
+import { Theme, SelectionWidgetNames, CommonWidgetNames } from './types'
+
 const THEME_PROVIDE_KEY = Symbol()
 const ThemeProvider = defineComponent({
   name: 'VJSFThemeProvider',
@@ -23,13 +16,15 @@ const ThemeProvider = defineComponent({
     return () => slots.default && slots.default()
   }
 })
-export function getWidget(name: string) {
+export function getWidget<T extends SelectionWidgetNames | CommonWidgetNames>(
+  name: T
+) {
   const context: Ref<Theme> | undefined = inject<Ref<Theme>>(THEME_PROVIDE_KEY)
   if (!context) {
     throw new Error('vjsf theme required')
   }
   const widgetRef = computed(() => {
-    return (context.value.widgets as any)[name]
+    return context.value.widgets[name]
   })
   return widgetRef
 }

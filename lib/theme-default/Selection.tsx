@@ -1,6 +1,6 @@
 import { defineComponent, PropType, ref, watch } from 'vue'
-import { SelectionWidgetPropsDefine } from '../types'
-export default defineComponent({
+import { SelectionWidgetPropsDefine, SelectionWidgetDefine } from '../types'
+const Selection: SelectionWidgetDefine = defineComponent({
   name: 'SelectionWidget',
   props: SelectionWidgetPropsDefine,
   setup(props, { slots, emit, attrs }) {
@@ -23,7 +23,7 @@ export default defineComponent({
       const { options } = props
       return (
         <select multiple={true} v-model={currentValueRef.value}>
-          {(options as any).map((op: { value: any; key: any }) => (
+          {options.map((op) => (
             <option value={op.value}>{op.key}</option>
           ))}
         </select>
@@ -31,3 +31,5 @@ export default defineComponent({
     }
   }
 })
+
+export default Selection

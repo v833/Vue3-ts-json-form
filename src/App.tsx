@@ -177,7 +177,7 @@ export default defineComponent({
             </div>
             <div class={classes.form}>
               {/* <SchemaForm schema={demo.schema} /> */}
-              <ThemeProvider theme={themeDefault as any}>
+              <ThemeProvider theme={themeDefault}>
                 <SchemaForm
                   schema={demo.schema}
                   // uiSchema={demo.uiSchema!}
