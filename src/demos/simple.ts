@@ -30,15 +30,8 @@ export default {
       singleTypeArry: {
         type: 'array',
         items: {
-          type: 'object',
-          properties: {
-            name: {
-              type: 'string'
-            },
-            age: {
-              type: 'number'
-            }
-          }
+          type: 'string',
+          enum: ['234', '456', '789']
         }
       }
     }

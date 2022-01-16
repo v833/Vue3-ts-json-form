@@ -2,6 +2,7 @@ import { defineComponent, PropType } from 'vue'
 import { FieldPropsDefine, Schema } from '../types'
 import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
+import SelectionWidget from '../widgets/Selection'
 /*
 { // 没有长度限制
   items: {type: string}
@@ -175,6 +176,19 @@ export default defineComponent({
             </ArrayItemWrapper>
           )
         })
+      } else {
+        const enumOptions = (schema as any).items.enum
+        const options = enumOptions.map((e: any) => ({
+          key: e,
+          value: e
+        }))
+        return (
+          <SelectionWidget
+            onChange={props.onChange}
+            value={props.value}
+            options={options}
+          />
+        )
       }
     }
   }
