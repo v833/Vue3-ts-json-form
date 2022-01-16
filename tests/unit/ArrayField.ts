@@ -1,14 +1,16 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import JsonSchemaForm, {
+import {
   NumberField,
   StringField,
   ArrayField,
   SelectionWidget
 } from '../../lib'
 
+import TestComponent from './utils/TestComponent'
+
 describe('ArrayField', () => {
   it('should render multi type', async () => {
-    const wrapper = mount(JsonSchemaForm as any, {
+    const wrapper = mount(TestComponent as any, {
       props: {
         schema: {
           type: 'array',
@@ -32,7 +34,7 @@ describe('ArrayField', () => {
     expect(num.exists()).toBeTruthy()
   })
   it('should render select type', async () => {
-    const wrapper = mount(JsonSchemaForm as any, {
+    const wrapper = mount(TestComponent as any, {
       props: {
         schema: {
           type: 'array',
@@ -47,7 +49,7 @@ describe('ArrayField', () => {
     expect(select.exists).toBeTruthy()
   })
   it('should render single type', async () => {
-    const wrapper = mount(JsonSchemaForm as any, {
+    const wrapper = mount(TestComponent as any, {
       props: {
         schema: {
           type: 'array',

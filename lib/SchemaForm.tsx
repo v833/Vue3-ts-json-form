@@ -4,10 +4,7 @@ import SchemaItem from './SchemaItem'
 import { SchemaFormContextKey } from './context'
 export default defineComponent({
   name: 'SchemaForm',
-  props: {
-    ...FieldPropsDefine
-    // theme: { type: Object as PropType<Theme>, required: true }
-  },
+  props: FieldPropsDefine,
   setup(props, { slots, emit, attrs }) {
     const handleChange = (v: any) => {
       props.onChange(v)
