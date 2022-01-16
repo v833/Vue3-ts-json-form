@@ -2,7 +2,8 @@ import { defineComponent, PropType } from 'vue'
 import { FieldPropsDefine, Schema } from '../types'
 import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
-import SelectionWidget from '../widgets/Selection'
+// import SelectionWidget from '../widgets/Selection'
+import { getWidget } from '../theme'
 /*
 { // 没有长度限制
   items: {type: string}
@@ -138,7 +139,10 @@ export default defineComponent({
       props.onChange(arr)
     }
 
+    const SelectionWidgetRef = getWidget('SelectionWidget')
+
     return () => {
+      const SelectionWidget = SelectionWidgetRef.value
       const { schema, rootSchema, value } = props
       const SchemaItem = context.SchemaItem
       const isMutiType = Array.isArray(schema.items)

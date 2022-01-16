@@ -5,8 +5,8 @@ import MonacoEditor from './components/MonacoEditor'
 
 import demos from './demos/index'
 
-import SchemaForm from '../lib'
-
+import SchemaForm, { ThemeProvider } from '../lib'
+import themeDefault from '../lib/theme-default'
 // TODO: 在lib中export
 type Schema = any
 type UISchema = any
@@ -177,14 +177,16 @@ export default defineComponent({
             </div>
             <div class={classes.form}>
               {/* <SchemaForm schema={demo.schema} /> */}
-              <SchemaForm
-                schema={demo.schema!}
-                // uiSchema={demo.uiSchema!}
-                onChange={handleChange}
-                // contextRef={methodRef}
-                value={demo.data}
-                rootSchema={demo.schema}
-              />
+              <ThemeProvider theme={themeDefault as any}>
+                <SchemaForm
+                  schema={demo.schema}
+                  // uiSchema={demo.uiSchema!}
+                  onChange={handleChange}
+                  // contextRef={methodRef}
+                  value={demo.data}
+                  rootSchema={demo.schema}
+                />
+              </ThemeProvider>
             </div>
           </div>
         </div>
