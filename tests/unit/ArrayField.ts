@@ -4,7 +4,7 @@ import JsonSchemaForm, {
   StringField,
   ArrayField,
   SelectionWidget
-} from '../../libs'
+} from '../../lib'
 
 describe('ArrayField', () => {
   it('should render multi type', async () => {

@@ -5,7 +5,7 @@ import MonacoEditor from './components/MonacoEditor'
 
 import demos from './demos/index'
 
-import SchemaForm from '../libs'
+import SchemaForm from '../lib'
 
 // TODO: 在lib中export
 type Schema = any

@@ -1,5 +1,5 @@
 import { mount, shallowMount } from '@vue/test-utils'
-import JsonSchemaForm, { NumberField, StringField } from '../../libs'
+import JsonSchemaForm, { NumberField, StringField } from '../../lib'
 
 describe('JsonSchemaForm', () => {
   it('should render correct number field', async () => {

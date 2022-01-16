@@ -3,7 +3,7 @@ import JsonSchemaForm, {
   ObjectField,
   StringField,
   NumberField
-} from '../../libs'
+} from '../../lib'
 
 describe('ObjectField', () => {
   let schema: any = undefined
